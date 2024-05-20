@@ -9,3 +9,5 @@ Restart GIMP, after copying files.
 Filters/MyScripts to run the scripts.
 
 The scripts that output files will write to the folder that the first image was copied in from.
+
+Quick runthrough on youtube: https://youtu.be/yfUFvIKG4tA
