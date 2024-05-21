@@ -39,7 +39,3 @@ I have PNG compression set to 9, which is default for GIMP. It is pretty slow bu
 **Export Layers Xk to PNG** - These scripts will export all layers in an image at the new resolution, into a new folder where the first image was exported from.
 I use it by dragging in the first image into GIMP and then selecting the rest of the images and dragging all into the layers menu. Good for resizing all the textures for a given material at once.
 Will also rename if it has a resolution in the filename(1k-8k).
-
-
-
-I may make a 4 channel pack in the near future, the ORM already has a 4th layer added due to how compose works through script. It would be a small modification to create Pack "4 Channel to RGBA"
