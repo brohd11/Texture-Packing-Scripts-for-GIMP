@@ -12,6 +12,8 @@ The scripts that output files will write to the folder that the first image was 
 
 Quick runthrough on youtube: https://youtu.be/yfUFvIKG4tA
 
+Run through of blender and rescaling scripts: https://youtu.be/qAfkJmusECg
+
 Note:
 I have PNG compression set to 9, which is default for GIMP. It is pretty slow but saves alot of space. Can be changed anywhere from 0-9 in this line:
 
