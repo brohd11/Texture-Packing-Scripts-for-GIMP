@@ -39,3 +39,6 @@ I have PNG compression set to 9, which is default for GIMP. It is pretty slow bu
 **Export Layers Xk to PNG** - These scripts will export all layers in an image at the new resolution, into a new folder where the first image was exported from.
 I use it by dragging in the first image into GIMP and then selecting the rest of the images and dragging all into the layers menu. Good for resizing all the textures for a given material at once.
 Will also rename if it has a resolution in the filename(1k-8k).
+
+**Export GLTF** - Export script for blender. Will set location of all selected objects to 0,0,0 and reset to original after export. Export as GLTF with modifiers applied and no materials, into new directory.
+Good for models like plants and grass with many models that will share the same textures.
