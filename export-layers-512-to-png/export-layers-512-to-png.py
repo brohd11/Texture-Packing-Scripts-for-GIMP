@@ -71,8 +71,10 @@ def python_fu_export_layers_512_to_png(image, drawable):
     for i in layers:
         counter += 1
         dupe_image = pdb.gimp_image_new(width, height, 0)
-
-        new_layer = pdb.gimp_layer_new(dupe_image, original_width, original_height, RGB_IMAGE, "Layer1", 100, NORMAL_MODE)
+        image_mode = 0
+        if pdb.gimp_drawable_has_alpha(i):
+            image_mode = 1
+        new_layer = pdb.gimp_layer_new(dupe_image, original_width, original_height, image_mode, "Layer1", 100, NORMAL_MODE)
        
         pdb.gimp_image_insert_layer(dupe_image, new_layer, None, 0)
        
