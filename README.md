@@ -30,10 +30,11 @@ I have PNG compression set to 9, which is default for GIMP. It is pretty slow bu
 
 **Pack Textures ORM** - Duplicates image, sets to gray scale and then composes the 3 layers. Returns composed image.
 
-**Pack Textures ORM to PNG** - Continues script to export to PNG and then delete stray files(duped imag and composed image in GIMP). Exports to folder where the first image was imported from.
+**Pack Textures ORM to PNG** - Continues script to export to PNG and then delete stray files(duped image and composed image in GIMP). Exports to folder where the first image was imported from.
 
-**Pack Textures OR to PNG** - In case where no metalness map is available, it will insert a black layer(non-metallic) and follow the same export procedure.
+**Pack Textures OR to PNG** - In cases where no metalness map is available, it will insert a black layer(non-metallic) and follow the same export procedure.
 
+**Pack Textures 4ch RGBA to PNG** - Takes 4 layers and converts to RGBA. Export to PNG.
 
 **Export Layers Xk to PNG** - These scripts will export all layers in an image at the new resolution, into a new folder where the first image was exported from.
 I use it by dragging in the first image into GIMP and then selecting the rest of the images and dragging all into the layers menu. Good for resizing all the textures for a given material at once.
