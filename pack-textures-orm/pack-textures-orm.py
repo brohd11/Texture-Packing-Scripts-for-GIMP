@@ -15,15 +15,21 @@ def python_fu_pack_textures_orm(image, drawable):
 
     layer_check = image.layers
     if not len(layer_check) == 3:
-	gimp.message("Need 3 layers.")
-	return
+        gimp.message("Need 3 layers.")
+        return
 	
     # Get the width and height of the original image
     width = image.width
     height = image.height
 
     dupe_image = pdb.gimp_image_duplicate(image)
-    pdb.gimp_convert_grayscale(dupe_image)
+
+    color_mode = pdb.gimp_image_base_type(image)
+    
+    if color_mode != 1:
+        pdb.gimp_convert_grayscale(dupe_image)
+        gimp.message("Converted to grayscale.")
+
 
     white_layer = pdb.gimp_layer_new(dupe_image, width, height, GRAY_IMAGE, "Layer 4", 100, NORMAL_MODE)
     pdb.gimp_image_insert_layer(dupe_image, white_layer, None, 3)

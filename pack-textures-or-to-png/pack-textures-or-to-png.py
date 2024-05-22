@@ -9,7 +9,7 @@ def python_fu_pack_textures_or_to_png(image, drawable):
     file_path = os.path.splitext(file_path_ext)[0]
     file_name_ext = pdb.gimp_item_get_name(image.layers[0])
     file_name = os.path.splitext(file_name_ext)[0]
-
+    
     if not file_path:
         gimp.message("No file path associated with the image.")
     else:
@@ -18,17 +18,22 @@ def python_fu_pack_textures_or_to_png(image, drawable):
     image_layers = image.layers
     if not len(image_layers) == 2:
         gimp.message("Need 2 layers.")
-	return
-	
+        return
+
     # Get the width and height of the original image
     width = image.width
     height = image.height
 
-    
-    dupe_image = pdb.gimp_image_duplicate(image)
-    pdb.gimp_convert_grayscale(dupe_image)
 
+    dupe_image = pdb.gimp_image_duplicate(image)
+
+    color_mode = pdb.gimp_image_base_type(image)
     
+    if color_mode != 1:
+        pdb.gimp_convert_grayscale(dupe_image)
+        gimp.message("Converted to grayscale.")
+
+
     black_layer = pdb.gimp_layer_new(dupe_image, width, height, GRAY_IMAGE, "Layer 3", 100, NORMAL_MODE)
     pdb.gimp_image_insert_layer(dupe_image, black_layer, None, 2)
     gimp.set_foreground(0,0,0)
